@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portofolio Super Team</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1d2538, #020617 55%);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .container {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 24px;
+      padding: 32px 32px 36px;
+      max-width: 980px;
+      width: 100%;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: #020617;
+    }
+
+    .logo-text {
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .hero {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.7fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: #facc15;
+    }
+
+    .hero-sub {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #9ca3af;
+      max-width: 460px;
+    }
+
+    .hero-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      margin-right: 6px;
+      box-shadow: 0 0 8px #22c55e;
+      display: inline-block;
+    }
+
+    .team-panel {
+      background: #020617;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 1px solid #1f2937;
+    }
+
+    .team-panel-title {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .team-panel-title span {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .team-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .member-card {
+      background: #0b1220;
+      border-radius: 14px;
+      padding: 10px 10px 12px;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .member-card:hover {
+      border-color: #f97316;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+      background: radial-gradient(circle at top, #111827, #020617);
+    }
+
+    .member-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      color: #020617;
+      margin-bottom: 8px;
+    }
+
+    .member-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .member-role {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 2px;
+      margin-bottom: 8px;
+    }
+
+    .member-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      color: #9ca3af;
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #e5e7eb;
+    }
+
+    .section-desc {
+      font-size: 13px;
+      color: #9ca3af;
+      max-width: 620px;
+    }
+
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .stack-pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #4b5563;
+      color: #e5e7eb;
+    }
+
+    footer {
+      margin-top: 26px;
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    footer a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        padding: 22px 18px 26px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .team-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top -->
+    <div class="header-top">
+      <div class="logo">
+        <div class="logo-circle">S</div>
+        <div class="logo-text">Super Team</div>
+      </div>
+      <div class="badge">Manajemen Proyek · Git & GitHub</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div>
+        <h1 class="hero-title">
+          Portofolio <span>Super Team</span><br>
+          Proyek Website Statis.
+        </h1>
+        <p class="hero-sub">
+          Website ini dibuat sebagai tugas manajemen proyek dan kolaborasi Git/GitHub.
+          Setiap anggota tim memiliki halaman profil masing-masing yang menampilkan data diri,
+          hobi, keahlian, dan aktivitas terakhir.
+        </p>
+
+        <div class="hero-meta">
+          <div><span class="dot"></span> Status: Aktif · Siklus 2</div>
+          <div>PM: Bryan</div>
+          <div>Teknologi: HTML, CSS, Git, GitHub</div>
+        </div>
+      </div>
+
+      <!-- Team panel -->
+      <div class="team-panel">
+        <div class="team-panel-title">
+          <span>Anggota Tim</span>
+          <span>3 anggota</span>
+        </div>
+        <div class="team-list">
+          <!-- Bryan -->
+          <a href="bryan.html" class="member-card">
+            <div class="member-avatar">B</div>
+            <div class="member-name">Bryan</div>
+            <div class="member-role">Project Manager</div>
+            <div class="member-tag">Profil & aktivitas →</div>
+          </a>
+
+          <!-- Chris -->
+          <a href="christofer.html" class="member-card">
+            <div class="member-avatar">C</div>
+            <div class="member-name">Chris</div>
+            <div class="member-role">Front-End Developer</div>
+            <div class="member-tag">Lihat halaman →</div>
+          </a>
+
+          <!-- Mozes -->
+          <a href="mozes.html" class="member-card">
+            <div class="member-avatar">M</div>
+            <div class="member-name">Mozes</div>
+            <div class="member-role">Developer</div>
+            <div class="member-tag">Lihat halaman →</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stack / Info tugas -->
+    <div class="section">
+      <div class="section-title">Detail Proyek</div>
+      <p class="section-desc">
+        Proyek ini menggunakan workflow kolaborasi Git:
+        setiap anggota bekerja di branch masing-masing, lalu melakukan pull request
+        untuk digabungkan ke branch <code>main</code> oleh Project Manager.
+        Terdiri dari dua siklus: pembuatan profil dan penambahan aktivitas terakhir.
+      </p>
+
+      <div class="stack-list">
+        <div class="stack-pill">Branch: main, bryan, chris, mozes</div>
+        <div class="stack-pill">Kolaborasi GitHub</div>
+        <div class="stack-pill">Static Website</div>
+        <div class="stack-pill">HTML Semantic</div>
+      </div>
+    </div>
+
+    <footer>
+      <span>© 2024 Super Team · Portofolio Kelompok</span>
+      <span>Disusun untuk tugas Manajemen Proyek & Kolaborasi Git/GitHub</span>
+    </footer>
+  </div>
+</body>
+</html>
