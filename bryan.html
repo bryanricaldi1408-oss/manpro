@@ -1,12 +1,150 @@
-https://image.idntimes.com/post/20211205/209914593-1129657534193457-7245829885514634048-n-220ea01d21b91c430f62ef802a06e0a0-5054f4db4d7c5a8c5b644c557643ba38.jpg<html>
-<head><title>Bryan</title></head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Bryan</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0f172a; /* Navy dark */
+      color: #e2e8f0;
+      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cv-container {
+      background: #1e293b; 
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 3px solid #facc15;
+    }
+
+    .name-section h1 {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .name-section p {
+      font-size: 16px;
+      margin-top: 4px;
+      color: #94a3b8;
+    }
+
+    /* Sub sections */
+    .section {
+      margin-top: 36px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #facc15;
+      border-left: 5px solid #facc15;
+      padding-left: 12px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-item {
+      padding: 8px 14px;
+      background: #0f172a;
+      border-radius: 8px;
+      border: 1px solid #475569;
+      font-size: 14px;
+    }
+
+    /* Activity section */
+    .activity-img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+
 <body>
-  <h2>Bryan</h2>
-  <img width="300" src="https://image.idntimes.com/post/20220627/image-23eb6c357dad1bd2ebc81d52ea2db034.jpg">
-  <p>Hobi: Coding, Gaming</p>
-  <p>Keahlian: HTML, CSS, Git</p>
-  <h2>Aktivitas Terakhir</h2>
-  <img width="300" src="https://image.idntimes.com/post/20211205/209914593-1129657534193457-7245829885514634048-n-220ea01d21b91c430f62ef802a06e0a0-5054f4db4d7c5a8c5b644c557643ba38.jpg">
-  <p>Makan</p>
+  <div class="cv-container">
+
+    <!-- Header -->
+    <div class="header">
+      <img class="profile-pic" src="https://image.idntimes.com/post/20220627/image-23eb6c357dad1bd2ebc81d52ea2db034.jpg">
+      
+      <div class="name-section">
+        <h1>Bryan</h1>
+        <p>Mahasiswa Teknik Informatika • Web Enthusiast</p>
+      </div>
+    </div>
+
+    <!-- Hobi -->
+    <div class="section">
+      <h2>Hobi</h2>
+      <p>Coding, Gaming, Membaca teknologi terbaru, dan eksplorasi project kecil.</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <h2>Keahlian</h2>
+      <div class="skills-grid">
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">Git & GitHub</div>
+        <div class="skill-item">JavaScript Basic</div>
+        <div class="skill-item">UI/UX Basic</div>
+        <div class="skill-item">Responsive Layout</div>
+      </div>
+    </div>
+
+    <!-- Last Activity -->
+    <div class="section">
+      <h2>Aktivitas Terakhir</h2>
+      <p>Makan bersama teman sambil berdiskusi tentang project website.</p>
+      <img class="activity-img" src="https://image.idntimes.com/post/20211205/209914593-1129657534193457-7245829885514634048-n-220ea01d21b91c430f62ef802a06e0a0-5054f4db4d7c5a8c5b644c557643ba38.jpg">
+    </div>
+
+    <footer>
+      © 2024 Bryan — Portofolio CV
+    </footer>
+
+  </div>
 </body>
 </html>
