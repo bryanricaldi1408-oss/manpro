@@ -1,17 +1,198 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basilius Mozes | Roblox Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. SETUP DUNIA GAME */
+        :root {
+            --roblox-blue: #00a2ff;
+            --roblox-red: #ee3333;
+            --water-bg: #4facfe;
+            --card-bg: #ffffff;
+            --text-color: #333;
+        }
 
-    </head>
-    <body>
-        <img src="robloxPfp.png">
-        <h1>Hi this is Basilius Mozes</h1>
-        <h2>Hobi saya is Gaming!!!</h2>
-        <h2>Keahlian saya berhasa Inggris dan planning kegiatan bersama teman (kerkol ataupun hangout)</h2>
-        <h2>Aktifitas terakhir saya adalah mancing di game Roblox "Fish it!"</h2>
-        <img src="robloxFishing.png">
-        <h2>Di foto ini saya sedang mancing di salah satu area dalam roblox game "Fish it!"</h2>
-        <h2>=========================================</h2>
-        <h2>Upddate: saya telah mendapatkan "kraken"</h2>
-        <img src="RobloxKraken.png">
-    </body>
+        body {
+            background-color: var(--water-bg);
+            /* Pola background bintik-bintik ala komik/air */
+            background-image: radial-gradient(#ffffff 15%, transparent 16%),
+                              radial-gradient(#ffffff 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            font-family: 'Comic Neue', cursive;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 2. KOTAK UTAMA (PROFILE CARD) */
+        .game-card {
+            background: var(--card-bg);
+            border: 8px solid #000;
+            border-radius: 25px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.2); /* Bayangan keras ala kartun */
+            position: relative;
+            animation: float 3s ease-in-out infinite; /* Efek mengapung */
+        }
+
+        /* Animasi Mengapung di Air */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* 3. FOTO PROFIL (AVATAR) */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--roblox-blue);
+            object-fit: cover;
+            background-color: #eee;
+            margin-top: -80px; /* Supaya menyembul keluar kotak */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .avatar:hover {
+            transform: scale(1.1) rotate(-10deg);
+            cursor: pointer;
+        }
+
+        /* 4. TEKS DAN HEADINGS */
+        h1 {
+            font-family: 'Bangers', cursive; /* Font komik tebal */
+            font-size: 3rem;
+            color: var(--roblox-blue);
+            text-shadow: 2px 2px 0 #000;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: #555;
+            background-color: #f0f9ff;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px dashed var(--roblox-blue);
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* Highlight kata-kata penting */
+        .highlight {
+            color: var(--roblox-red);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* 5. GAMBAR GAMEPLAY */
+        .gameplay-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 4px solid #333;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+
+        .gameplay-img:hover {
+            transform: rotate(2deg) scale(1.02);
+        }
+
+        /* 6. UPDATE ALERT (KRAKEN SECTION) */
+        .update-box {
+            margin-top: 30px;
+            background: #222;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 4px solid gold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .update-badge {
+            background-color: var(--roblox-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid white;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        .kraken-text {
+            color: gold;
+            font-weight: bold;
+            text-shadow: 0 0 10px orange;
+        }
+
+        /* Divider kustom */
+        .divider {
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--roblox-blue),
+                var(--roblox-blue) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-card">
+        <img src="robloxPfp.png" alt="Basilius Roblox Avatar" class="avatar">
+        
+        <h1>Hi, this is Basilius Mozes!</h1>
+        
+        <h2>Hobi saya is <span class="highlight">Gaming!!!</span> 🎮</h2>
+        
+        <h2>🗣️ Keahlian saya berbahasa Inggris dan planning kegiatan bersama teman (kerkol ataupun hangout)</h2>
+        
+        <div class="divider"></div>
+
+        <div>
+            <h2>🎣 Aktivitas terakhir saya adalah mancing di game Roblox <span class="highlight">"Fish it!"</span></h2>
+            <img src="robloxFishing.png" class="gameplay-img" alt="Mancing Mania Roblox">
+            <p style="font-size: 0.9rem; color: #666;">(Di foto ini saya sedang mancing di salah satu area chill)</p>
+        </div>
+
+        <div class="update-box">
+            <div class="update-badge">🚨 UPDATE! 🚨</div>
+            <h2 style="background: none; border: none; color: white;">
+                Saya telah mendapatkan <span class="kraken-text">"KRAKEN"</span> 🦑
+            </h2>
+            <img src="RobloxKraken.png" class="gameplay-img" style="border-color: gold;" alt="Kraken Catch">
+        </div>
+    </div>
+
+</body>
 </html>
